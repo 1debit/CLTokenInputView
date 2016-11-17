@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "CLToken.h"
+#import "CLBackspaceDetectingTextField.h"
 
 #if __has_feature(objc_generics)
 #define CL_GENERIC_ARRAY(type) NSArray<type>
@@ -82,6 +83,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) IBInspectable UIColor *fieldColor;
 @property (copy, nonatomic, nullable) IBInspectable NSString *placeholderText;
 @property (strong, nonatomic, nullable) UIView *accessoryView;
+@property (strong, nonatomic) CLBackspaceDetectingTextField *textField;
+@property (strong, nonatomic) UILabel *fieldLabel;
 @property (assign, nonatomic) IBInspectable UIKeyboardType keyboardType;
 @property (assign, nonatomic) IBInspectable UITextAutocapitalizationType autocapitalizationType;
 @property (assign, nonatomic) IBInspectable UITextAutocorrectionType autocorrectionType;
