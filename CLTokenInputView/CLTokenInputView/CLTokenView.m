@@ -184,8 +184,9 @@ static NSString *const UNSELECTED_LABEL_NO_COMMA_FORMAT = @"%@";
     NSString *labelString = [NSString stringWithFormat:format, self.displayText];
     NSMutableAttributedString *attrString =
     [[NSMutableAttributedString alloc] initWithString:labelString
-                                           attributes:@{NSFontAttributeName : self.label.font,
-                                                        NSForegroundColorAttributeName : [UIColor lightGrayColor]}];
+                                           attributes:@{
+                                                        NSFontAttributeName : [UIFont fontWithName:@"SourceSansPro-Light" size:16.0],
+                                                        NSForegroundColorAttributeName : [UIColor blackColor]}];
     NSRange tintRange = [labelString rangeOfString:self.displayText];
     // Make the name part the system tint color
     UIColor *tintColor = self.selectedBackgroundView.backgroundColor;
