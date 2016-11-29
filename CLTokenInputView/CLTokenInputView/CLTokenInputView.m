@@ -285,10 +285,16 @@ static CGFloat const FIELD_MARGIN_X = 4.0; // Note: Same as CLTokenView.PADDING_
 - (void)updatePlaceholderTextVisibility
 {
     if (self.tokens.count > 0) {
-        self.textField.placeholder = nil;
+        self.textField.attributedPlaceholder = nil;
     } else {
-        self.textField.placeholder = self.placeholderText;
+        self.textField.attributedPlaceholder = [[NSAttributedString alloc]
+                                                initWithString:self.placeholderText
+                                                attributes:@{
+                                                                NSFontAttributeName : [UIFont fontWithName:@"SourceSansPro-Light" size:16.0],
+                                                                NSBaselineOffsetAttributeName : @0.5
+                                               }];
     }
+    
 }
 
 
